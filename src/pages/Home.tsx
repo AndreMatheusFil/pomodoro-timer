@@ -1,9 +1,16 @@
-import { View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 export const Home = () => {
+  const navigation = useNavigation<any>();
   return (
     <View>
         <Text style={{ fontFamily: "InterBold", fontSize: 50 }}>Home</Text>
+        
+        <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
+            <Text style={{ fontFamily: "InterRegular", fontSize: 20 }}>Go to Settings</Text>
+        </TouchableOpacity>
+
     </View>
   );
 }
